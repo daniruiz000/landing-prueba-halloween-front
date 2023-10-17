@@ -1,0 +1,14 @@
+/* CalabazaGiratoria.css */
+.calabaza-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $orange-ligth; /* Fondo amarillo */
+  }
+  
+  .calabaza-spinner {
+    width: 50%;
+    animation: spin 2s linear infinite;
+  }
+  
