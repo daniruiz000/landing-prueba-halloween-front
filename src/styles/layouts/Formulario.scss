@@ -46,7 +46,6 @@
     & input[type="text"],
     & input[type="email"],
     & input[type="tel"] {
-      /* Estilos para campos de entrada de texto, email y teléfono */
       width: 90%;
       padding: 10px;
       text-align: center;
@@ -59,7 +58,6 @@
     margin: 10px auto;
     font-size: 20px;
     font-family: sans-serif;
-    /* Estilos específicos para el campo de carga de archivo (input[type="file"]) */
   }
 
   & button {
@@ -86,11 +84,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999; /* Coloca el div por encima de todo lo demás */
+  z-index: 999;
 }
 
 .condiciones-content {
@@ -99,8 +97,8 @@
   max-width: 80%;
   text-align: center;
   border-radius: 5px;
-  max-height: 70vh; /* Altura máxima para permitir desplazamiento */
-  overflow: auto; /* Habilitar el desplazamiento cuando sea necesario */
+  max-height: 70vh; 
+  overflow: auto; 
 }
 
 .condiciones-content h2 {
