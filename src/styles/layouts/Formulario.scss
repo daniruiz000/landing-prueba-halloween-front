@@ -94,20 +94,28 @@
 }
 
 .condiciones-content {
-  background-color: #fff;
+  background-color: $orange;
   padding: 20px;
   max-width: 80%;
   text-align: center;
   border-radius: 5px;
+  max-height: 70vh; /* Altura máxima para permitir desplazamiento */
+  overflow: auto; /* Habilitar el desplazamiento cuando sea necesario */
 }
 
 .condiciones-content h2 {
-  font-size: 24px;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.condiciones-content h3 {
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
 .condiciones-content p {
   font-size: 16px;
+  font-family: sans-serif;
   margin-bottom: 10px;
 }
 
