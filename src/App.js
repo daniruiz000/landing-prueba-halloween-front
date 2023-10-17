@@ -7,6 +7,12 @@ import Correct from './pages/Correct';
 
 import Calabaza from './assets/img/calabaza-smile.svg';
 
+const Loading = () => (
+  <div className='loading'>
+    <img className='spinner' src={Calabaza} alt='Cargando...' />
+  </div>
+);
+
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -17,21 +23,18 @@ const App = () => {
   }, []);
 
   if (isLoading) {
-    return (
-      <div className='loading'>
-        <img className='spinner' src={Calabaza} alt='Cargando...' />
-      </div>
-    );
+    return <Loading />;
   }
 
   return (
     <HashRouter>
       <div className='App'>
         <Routes>
+          <Route path='/loading' element={<Loading />} />
           <Route path='/' element={<Home />} />
           <Route path='/formulario' element={<Formulario />} />
           <Route path='/correct' element={<Correct />} />
-          <Route path='/*' element={<div>"Página no existe</div>} />
+          <Route path='/*' element={<div>Página no existe</div>} />
         </Routes>
       </div>
     </HashRouter>
