@@ -1,0 +1,88 @@
+@import "../utilities/mixins";
+@import "../utilities/variables";
+.home{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  background-image: url("../../assets/img/fondo-halloween.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+}
+.header {
+  margin: 50px auto;
+  margin-bottom: 40px;
+  width: 90%;
+
+  &_title{
+    width: 95%;
+    text-align: center;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 400;
+    -webkit-text-stroke: 0.8px #000; 
+    margin: 10px auto;
+    
+  }
+}
+.container{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  
+  &_texto_no-dejes{
+    width: 40%;
+  }
+  &_murcielagos {
+    max-width: 130px;
+    max-height: 100%;
+    object-fit: cover;
+    margin: 10px;
+  }
+  &_texto-no-dejes{
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    width: 50%;
+    -webkit-text-stroke: 0.1px #000; 
+  }
+  &_texto-manda-selfi{
+    width: 90%;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    margin: 20px auto;
+    -webkit-text-stroke: 0.1px #000; 
+    text-align: left;
+  }
+}
+
+.container-down{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 40px auto;
+  // margin-top: 40px;
+
+  &_button{
+    width: 170px;
+    font-size: 30px;
+    border-radius: 50px;
+    border: 1px solid #000;
+    background: $orange;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    margin: 10px;
+  }
+  &_calabaza{
+    width: 115px;
+    height: 115px;
+    margin: 10px;
+  }
+}
