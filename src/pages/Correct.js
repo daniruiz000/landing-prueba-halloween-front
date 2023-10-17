@@ -11,7 +11,7 @@ const Correct = () => {
   return (
     <div className='correct'>
       <div className='correct_header'>
-        <h2 className='correct_title'> Usuario registrado</h2>
+        <h2 className='correct_title'> Usuario registrado!</h2>
         <h2 className='correct_title'> Muchas gracias!!!</h2>
         <img className='container-down_calabaza' src={Calabaza} onClick={handleClick} />
       </div>
