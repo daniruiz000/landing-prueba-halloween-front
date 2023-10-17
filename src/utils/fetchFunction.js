@@ -1,6 +1,8 @@
+const API_URL = process.env.REACT_APP_API_URL;
+
 export const fetchFunction = async (formData) => {
   try {
-    const response = await fetch('https://landing-promo-prueba-api.onrender.com/user/add-user', {
+    const response = await fetch(API_URL, {
       method: 'POST',
       body: formData,
     });
