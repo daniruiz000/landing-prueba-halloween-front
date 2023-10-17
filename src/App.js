@@ -5,16 +5,15 @@ import Home from './pages/Home';
 import Formulario from './pages/Formulario';
 import Correct from './pages/Correct';
 
-import Calabaza from './assets/img/calabaza-smile.svg'; // Importa la imagen SVG
+import Calabaza from './assets/img/calabaza-smile.svg';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simula un tiempo de carga (puedes reemplazar esto con tu lógica de carga real)
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Cambia el tiempo según tus necesidades
+    }, 2000);
   }, []);
 
   if (isLoading) {
