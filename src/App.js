@@ -1,25 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
+import './App.css'; // Importa el archivo CSS actualizado
 
-import Home from './pages/Home';
-import Formulario from './pages/Formulario';
-import Correct from './pages/Correct';
-
-import Calabaza from './assets/img/calabaza-smile.svg';
-
-const Loading = () => (
-  <div className='loading'>
-    <img className='spinner' src={Calabaza} alt='Cargando...' />
-  </div>
-);
+const Home = lazy(() => import('./pages/Home'));
+const Formulario = lazy(() => import('./pages/Formulario'));
+const Correct = lazy(() => import('./pages/Correct'));
+const Loading = () => <div className='loading'>Cargando...</div>;
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Simula un tiempo de carga (puedes reemplazar esto con tu lógica de carga real)
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 2000); // Cambia el tiempo según tus necesidades
   }, []);
 
   if (isLoading) {
@@ -29,13 +24,14 @@ const App = () => {
   return (
     <HashRouter>
       <div className='App'>
-        <Routes>
-          <Route path='/loading' element={<Loading />} />
-          <Route path='/' element={<Home />} />
-          <Route path='/formulario' element={<Formulario />} />
-          <Route path='/correct' element={<Correct />} />
-          <Route path='/*' element={<div>Página no existe</div>} />
-        </Routes>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/formulario' element={<Formulario />} />
+            <Route path='/correct' element={<Correct />} />
+            <Route path='/*' element={<div>Página no existe</div>} />
+          </Routes>
+        </Suspense>
       </div>
     </HashRouter>
   );
