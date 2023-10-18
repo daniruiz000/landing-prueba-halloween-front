@@ -1,6 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Loading from './components/Loading';
+import NotFound from './components/NotFound';
 
 const Home = lazy(() => import('./pages/Home'));
 const Formulario = lazy(() => import('./pages/Formulario'));
@@ -12,7 +13,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 3000);
   }, []);
 
   if (isLoading) {
@@ -27,7 +28,7 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='/formulario' element={<Formulario />} />
             <Route path='/correct' element={<Correct />} />
-            <Route path='/*' element={<div>Página no existe</div>} />
+            <Route path='/*' element={<NotFound />} />
           </Routes>
         </Suspense>
       </div>
