@@ -1,4 +1,4 @@
-.alert-div {
+.avisoFoto-div {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,7 +11,7 @@
     z-index: 999;
   }
   
-  .alert-content {
+  .avisoFoto-content {
     background-color: $orange; // Reemplaza $orange con tu color deseado
     padding: 20px;
     max-width: 80%;
@@ -25,20 +25,13 @@
     align-items: center;
   }
   
-  .alert-content h2 {
-    font-size: 30px;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-  }
-  
-  .alert-content h3 {
+  .avisoFoto-content h3 {
     font-size: 20px;
     margin-bottom: 10px;
     letter-spacing: 2px;
   }
 
-  .alert-content button {
-    padding: 10px 20px;
+  .avisoFoto-content button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -47,10 +40,14 @@
     transition: background-color 0.3s;
     font-size: 20px;
     margin: 10px auto;
-    width: 50%;
+    width: 60%;
+    text-align: center;
   }
   
-  .alert-content button:hover {
+  .avisoFoto-content button:hover {
     background-color: #0056b3; 
   }
-  
+  .aviso-foto {
+    text-align: center;
+    font-size: 16px;
+  }

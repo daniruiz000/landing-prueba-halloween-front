@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Alert = ({ message, type, onClose }) => {
+const Alert = ({ message, onClose }) => {
   return (
     <div className='alert-div'>
       <div className='alert-content'>

@@ -4,6 +4,7 @@ import { fetchFunction } from '../utils/fetchFunction';
 import { añadirDatos, verificarFormularioCompleto } from '../utils/dataUtils';
 import Condiciones from '../components/Condiciones';
 import Alert from '../components/Alert';
+import AvisoFoto from '../components/AvisoFoto';
 
 const Formulario = () => {
   const navigate = useNavigate();
@@ -22,6 +23,9 @@ const Formulario = () => {
 
   const [alert, setAlert] = useState(null);
 
+  const [fotoSubida, setFotoSubida] = useState(false);
+  const [avisoFoto, setAvisoFoto] = useState(null);
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setDatos({ ...datos, [name]: value });
@@ -30,6 +34,14 @@ const Formulario = () => {
   const handleFotoChange = (event) => {
     const foto = event.target.files?.[0] ?? null;
     setDatos({ ...datos, foto });
+
+    if (foto) {
+      setFotoSubida(true);
+      setAvisoFoto('Foto subida !!!');
+    } else {
+      setFotoSubida(false);
+      setAvisoFoto(null);
+    }
   };
 
   const handleMostrarCondiciones = () => {
@@ -50,6 +62,10 @@ const Formulario = () => {
 
   const closeAlert = () => {
     setAlert(null);
+  };
+
+  const closeAvisoFoto = () => {
+    setAvisoFoto(null);
   };
 
   const handleSubmit = async (event) => {
@@ -100,9 +116,14 @@ const Formulario = () => {
           <input type='tel' name='telefono' value={datos.telefono} required={true} onChange={handleInputChange} />
         </div>
         <div className='campo-div'>
-          <label>Subir Foto:</label>
-          <input type='file' name='foto' accept='image/*' onChange={handleFotoChange} />
+          <label>Foto:</label>
+          <label className='file-upload-label' htmlFor='file-upload'>
+            Subir Foto
+          </label>
+          <input type='file' name='foto' id='file-upload' accept='image/*' onChange={handleFotoChange} style={{ display: 'none' }} />
         </div>
+        {fotoSubida && <p>Foto subida !!!</p>}
+        {avisoFoto && <AvisoFoto message={avisoFoto} onClose={closeAvisoFoto} />}
         <div>
           <button type='submit'>Enviar</button>
         </div>
