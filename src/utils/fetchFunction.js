@@ -11,7 +11,7 @@ export const fetchFunction = async (formData, showAlert) => {
       return true;
     } else {
       const errorText = await response.text();
-      showAlert(`Error: ${response.status} - ${response.statusText}\n${errorText}`, 'error');
+      showAlert(`${errorText}`, 'error');
     }
   } catch (error) {
     console.error(error);
