@@ -1,10 +1,12 @@
-/* CalabazaGiratoria.css */
+@import "../utilities/mixins";
+@import "../utilities/variables";
+
 .calabaza-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: $orange-ligth; /* Fondo amarillo */
+    background-color: $orange-ligth;
   }
   
   .calabaza-spinner {

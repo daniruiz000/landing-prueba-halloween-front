@@ -14,5 +14,11 @@ export const añadirDatos = (datos) => {
 };
 
 export const verificarFormularioCompleto = (datos) => {
-  return datos.nombre.trim() !== '' && datos.apellido.trim() !== '' && datos.segundo_apellido.trim() !== '' && datos.email.trim() !== '' && datos.telefono.trim() !== '';
+  const nombreValido = /^[A-Za-zÁ-ÿ\s]{2,19}$/.test(datos.nombre.trim());
+  const apellidoValido = /^[A-Za-zÁ-ÿ\s]{2,19}$/.test(datos.apellido.trim());
+  const segundoApellidoValido = /^[A-Za-zÁ-ÿ\s]{2,19}$/.test(datos.segundo_apellido.trim());
+  const telefonoValido = /^(34|\+34|0034)?[6789]\d{8}$/.test(datos.telefono);
+  const emailValido = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(datos.email);
+
+  return nombreValido && apellidoValido && segundoApellidoValido && telefonoValido && emailValido && datos.nombre.trim() !== '' && datos.apellido.trim() !== '' && datos.segundo_apellido.trim() !== '' && datos.email.trim() !== '' && datos.telefono.trim() !== '';
 };
