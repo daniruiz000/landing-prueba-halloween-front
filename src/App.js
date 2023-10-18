@@ -3,7 +3,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Loading from './components/Loading';
 import NotFound from './components/NotFound';
 
-const Home = lazy(() => import('./pages/Home'));
+import Home from './pages/Home';
 const Formulario = lazy(() => import('./pages/Formulario'));
 const Correct = lazy(() => import('./pages/Correct'));
 
