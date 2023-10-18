@@ -56,7 +56,7 @@ const Formulario = () => {
     setAceptarCondiciones(!aceptarCondiciones);
   };
 
-  const showAlert = (message, type) => {
+  const showAlert = (message) => {
     setAlert({ message });
   };
 
@@ -84,10 +84,10 @@ const Formulario = () => {
             navigate('/correct');
           }
         } else {
-          showAlert('Falta rellenar alguno de los campos correctamente.', 'error');
+          showAlert('Falta rellenar alguno de los campos correctamente.');
         }
       } catch (error) {
-        showAlert(error, 'error');
+        showAlert(error);
       }
     }
   };
