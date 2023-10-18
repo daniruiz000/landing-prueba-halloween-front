@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import Murcielagos from '../assets/img/murcielagos.svg';
 import Calabaza from '../assets/img/calabaza-smile.svg';
-import Loading from './components/Loading';
+import Loading from '../components/Loading';
 
 const Home = () => {
   const navigate = useNavigate();
