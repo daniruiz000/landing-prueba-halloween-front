@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { fetchFunction } from '../utils/fetchFunction';
 import { añadirDatos, verificarFormularioCompleto } from '../utils/dataUtils';
 import Condiciones from '../components/Condiciones';
+import Alert from '../components/Alert';
 
 const Formulario = () => {
   const navigate = useNavigate();
@@ -18,6 +19,8 @@ const Formulario = () => {
 
   const [mostrarCondiciones, setMostrarCondiciones] = useState(false);
   const [aceptarCondiciones, setAceptarCondiciones] = useState(false);
+
+  const [alert, setAlert] = useState(null);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -41,6 +44,14 @@ const Formulario = () => {
     setAceptarCondiciones(!aceptarCondiciones);
   };
 
+  const showAlert = (message, type) => {
+    setAlert({ message, type });
+  };
+
+  const closeAlert = () => {
+    setAlert(null);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -51,16 +62,16 @@ const Formulario = () => {
         const formRellenado = verificarFormularioCompleto(datos);
         if (formRellenado) {
           const formData = añadirDatos(datos);
-          const response = await fetchFunction(formData, navigate);
+          const response = await fetchFunction(formData, showAlert);
 
           if (response) {
             navigate('/correct');
           }
         } else {
-          alert('Falta rellenar alguno de los campos correctamente.');
+          showAlert('Falta rellenar alguno de los campos correctamente.', 'error');
         }
       } catch (error) {
-        alert(error);
+        showAlert(error, 'error');
       }
     }
   };
@@ -108,6 +119,7 @@ const Formulario = () => {
         </div>
       </form>
       {mostrarCondiciones && <Condiciones handleCloseCondiciones={handleCloseCondiciones} aceptarCondiciones={aceptarCondiciones} handleAceptarCondiciones={handleAceptarCondiciones} />}
+      {alert && <Alert message={alert.message} type={alert.type} onClose={closeAlert} />}
     </div>
   );
 };

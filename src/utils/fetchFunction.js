@@ -1,6 +1,6 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
-export const fetchFunction = async (formData) => {
+export const fetchFunction = async (formData, showAlert) => {
   try {
     const response = await fetch(API_URL, {
       method: 'POST',
@@ -11,11 +11,10 @@ export const fetchFunction = async (formData) => {
       return true;
     } else {
       const errorText = await response.text();
-      console.log(errorText);
-      alert(`Error: ${response.status} - ${response.statusText}\n${errorText}`);
+      showAlert(`Error: ${response.status} - ${response.statusText}\n${errorText}`, 'error');
     }
   } catch (error) {
     console.error(error);
-    alert(`Error en fetchFunction: ${error}`);
+    showAlert(`Error en fetchFunction: ${error}`, 'error');
   }
 };

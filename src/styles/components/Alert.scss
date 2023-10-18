@@ -1,0 +1,52 @@
+.alert-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .alert-content {
+    background-color: $orange; // Reemplaza $orange con tu color deseado
+    padding: 20px;
+    max-width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    max-height: 70vh;
+    overflow: auto;
+  }
+  
+  .alert-content h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  
+  .alert-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+
+  .alert-content button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  
+  .alert-content button:hover {
+    background-color: #0056b3; 
+  }
+  
