@@ -11,10 +11,10 @@ export const fetchFunction = async (formData, showAlert) => {
       return true;
     } else {
       const errorText = await response.text();
-      showAlert(`${errorText}`, 'error');
+      showAlert(errorText);
     }
   } catch (error) {
     console.error(error);
-    showAlert(`Error en fetchFunction: ${error}`, 'error');
+    showAlert(error);
   }
 };

@@ -57,7 +57,7 @@ const Formulario = () => {
   };
 
   const showAlert = (message, type) => {
-    setAlert({ message, type });
+    setAlert({ message });
   };
 
   const closeAlert = () => {
@@ -140,7 +140,7 @@ const Formulario = () => {
         </div>
       </form>
       {mostrarCondiciones && <Condiciones handleCloseCondiciones={handleCloseCondiciones} aceptarCondiciones={aceptarCondiciones} handleAceptarCondiciones={handleAceptarCondiciones} />}
-      {alert && <Alert message={alert.message} type={alert.type} onClose={closeAlert} />}
+      {alert && <Alert message={alert.message} onClose={closeAlert} />}
     </div>
   );
 };
