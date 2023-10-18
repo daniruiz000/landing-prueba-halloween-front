@@ -1,25 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router';
 import Murcielagos from '../assets/img/murcielagos.svg';
 import Calabaza from '../assets/img/calabaza-smile.svg';
-import Loading from '../components/Loading';
 
 const Home = () => {
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(true);
 
   const handleGoToForm = () => {
     navigate('/formulario');
   };
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  }, []);
-
-  if (isLoading) {
-    return <Loading />;
-  }
 
   return (
     <div className='home'>
