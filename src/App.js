@@ -8,11 +8,16 @@ const Correct = lazy(() => import('./pages/Correct'));
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isHomeLoaded, setIsHomeLoaded] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 3000);
+
+    setTimeout(() => {
+      setIsHomeLoaded(true);
+    }, 3000);
   }, []);
 
   if (isLoading) {
@@ -24,7 +29,7 @@ const App = () => {
       <div className='App'>
         <Suspense fallback={<Loading />}>
           <Routes>
-            <Route path='/' element={<Home />} />
+            {isHomeLoaded && <Route path='/' element={<Home />} />}
             <Route path='/formulario' element={<Formulario />} />
             <Route path='/correct' element={<Correct />} />
             <Route path='/*' element={<div>Página no existe</div>} />
