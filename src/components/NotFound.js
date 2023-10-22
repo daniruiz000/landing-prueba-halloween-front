@@ -1,6 +1,7 @@
 import React from 'react';
-import Calabaza from '../assets/img/calabaza-smile.svg';
 import { useNavigate } from 'react-router-dom';
+
+import Calabaza from '../assets/img/calabaza-smile.svg';
 
 const NotFound = () => {
   const navigate = useNavigate();

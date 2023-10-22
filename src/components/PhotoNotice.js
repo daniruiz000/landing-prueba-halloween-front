@@ -1,7 +1,7 @@
 import React from 'react';
 
-const AvisoFoto = ({ message, onClose }) => {
-  const handleAvisoFotoClose = (event) => {
+const PhotoNotice = ({ message, onClose }) => {
+  const handlePhotoNoticeClose = (event) => {
     event.preventDefault();
     onClose();
   };
@@ -10,10 +10,10 @@ const AvisoFoto = ({ message, onClose }) => {
     <div className='avisoFoto-div'>
       <div className='avisoFoto-content'>
         <h3>{message}</h3>
-        <button onClick={handleAvisoFotoClose}>Cerrar</button>
+        <button onClick={handlePhotoNoticeClose}>Cerrar</button>
       </div>
     </div>
   );
 };
 
-export default AvisoFoto;
+export default PhotoNotice;

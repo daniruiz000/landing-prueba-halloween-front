@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
+
 import Murcielagos from '../assets/img/murcielagos.svg';
 import Calabaza from '../assets/img/calabaza-smile.svg';
 
@@ -7,7 +8,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleGoToForm = () => {
-    navigate('/formulario');
+    navigate('/form');
   };
 
   return (
